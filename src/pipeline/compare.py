@@ -15,7 +15,7 @@ from pipeline.mlp_strategy import MLPForecastingStrategy
 
 def load_and_split_data():
     """Đọc dữ liệu và chia thành 3 phần Train/Valid/Test cho tất cả các mốc"""
-    features_path = os.path.join(config.FINAL_DATA_DIR, "features_augmented.csv")
+    features_path = os.path.join(config.FINAL_DATA_DIR, "features_augmented_enso.csv")
     features = pd.read_csv(features_path)
     target = pd.read_csv(config.TARGET_PATH)
 
@@ -87,7 +87,7 @@ def run_experiment_matrix():
     all_cols = list(X_train.columns)
     vis_cols = [col for col in all_cols if col.startswith('vision_emb_')]
     raw_cols = [
-        'LAT', 'LON', 'WMO_WIND', 'WMO_PRES', 'DIST2LAND',
+        'LAT', 'LON', 'WMO_WIND', 'WMO_PRES', 'DIST2LAND', 'ENSO',
         'LAT_T-6', 'LON_T-6', 'WIND_T-6', 'PRES_T-6',
         'LAT_T-12', 'LON_T-12', 'WIND_T-12', 'PRES_T-12',
         'LAT_T-18', 'LON_T-18', 'WIND_T-18', 'PRES_T-18',

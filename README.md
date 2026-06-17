@@ -3,14 +3,18 @@
 > Một hệ thống Trí tuệ Nhân tạo chuyên biệt để dự báo **đồng thời** quỹ đạo và cường độ của xoáy thuận nhiệt đới tại khu vực Tây Bắc Thái Bình Dương (WNP). Khác với các phương pháp truyền thống, hệ thống này tiên phong áp dụng kiến trúc **Multimodal (Đa phương thức)**: kết hợp dữ liệu bảng (Tabular chuỗi thời gian) và dữ liệu không gian lưới 3D (ERA5 Spatial Grids) thông qua mạng Deep Learning **(CNN + GRU)**, sau đó hợp nhất (Fusion) với thuật toán **XGBoost** để đưa ra dự đoán cuối cùng. Đi kèm là hệ thống Web **(FastAPI + Vite/Leaflet)** mô phỏng kết quả trực quan trên bản đồ.
 
 ## GVHD:
-PSG.TS.Nguyễn Lưu Thùy Ngân
+TS. Nguyễn Văn Kiệt
 
-TS. Dương Ngọc Hảo
+CN. Trần Quốc Khánh
 
 ## Thành viên:
 1. Phạm Đình Quang Huy - MSSV: 24520689 
 
 2. Huỳnh Lâm Bảo Khang - MSSV: 24520738
+
+3. Phạm Ngọc Minh - MSSV: 24521082
+
+4. Nguyễn Thị Kim Ngân - MSSV: 24521130
 
 ---
 

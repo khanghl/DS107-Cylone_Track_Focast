@@ -42,3 +42,18 @@ LGBM_PARAMS = {
     'lambda_l2': 0.007903293650218675,
     'min_child_samples': 57,
 }
+
+# Thư viện XGBoost
+XGB_PARAMS = {
+    'objective': 'reg:squarederror',
+    'eval_metric': 'rmse',
+    'random_state': RANDOM_STATE,
+    'learning_rate': 0.05,
+    'n_estimators': 1500,
+    'max_depth': 5,
+    'subsample': 0.8,
+    'colsample_bytree': 0.8,
+    'reg_alpha': 0.1,
+    'reg_lambda': 1.0,
+    'n_jobs': -1
+}

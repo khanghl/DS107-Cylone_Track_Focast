@@ -22,7 +22,7 @@ def haversine_distance(lat_true, lon_true, lat_pred, lon_pred):
     return 6371 * c  # Bán kính Trái Đất ~ 6371 km
 
 
-def evaluate_advanced_metrics(y_true, y_pred, v_past):
+def evaluate_advanced_metrics(y_true, y_pred, v_past, verbose=False):
     """
     y_true: Mảng chứa [delta_lat_obs, delta_lon_obs]
     y_pred: Mảng chứa [delta_lat_pred, delta_lon_pred]
@@ -72,14 +72,9 @@ def evaluate_advanced_metrics(y_true, y_pred, v_past):
     # Tránh chia cho 0 nếu tập test không có ca đột biến nào
     velocity_sensitivity = (total_hits / total_anomalies * 100) if total_anomalies > 0 else 0
     
-    # In kết quả
-    # print("--- KẾT QUẢ ĐÁNH GIÁ CHUYÊN SÂU ---")
-    print(f"1. Directional Stability: {directional_stability:.2f}%")
-    # print(f"   (Kỳ vọng: > 87%)")
-    print(f"2. Moving Velocity Sensitivity: {velocity_sensitivity:.2f}% \n")
-    # print(f"   (Kỳ vọng: ~ 40-60% - Đây là điểm yếu của GBDT)")
-    # print(f"   - Số ca đột biến thực tế: {total_anomalies}")
-    # print(f"   - Số ca mô hình bắt trúng: {total_hits}")
+    if verbose:
+        print(f"1. Directional Stability: {directional_stability:.2f}%")
+        print(f"2. Moving Velocity Sensitivity: {velocity_sensitivity:.2f}% \n")
 
     return directional_stability, velocity_sensitivity
 

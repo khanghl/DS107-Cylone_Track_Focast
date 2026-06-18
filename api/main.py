@@ -180,5 +180,6 @@ def predict_track(request: PredictRequest):
         "sid": row['SID'].values[0],
         "current_lat": base_lat,
         "current_lon": base_lon,
+        "current_wind": base_wind,
         "predictions": predictions
     }

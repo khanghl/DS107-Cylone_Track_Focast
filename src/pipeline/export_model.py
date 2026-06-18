@@ -8,8 +8,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 sys.path.append(str(BASE_DIR / 'src'))
 
-from pipeline.compare import load_and_split_data
-from pipeline.multimodal import MultimodalForecastingStrategy
+from pipeline._04_compare import load_and_split_data
+from module.multimodal import MultimodalForecastingStrategy
 
 def export_model_and_data():
     print("Loading data...")

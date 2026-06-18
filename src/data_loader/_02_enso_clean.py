@@ -2,7 +2,7 @@
 import pandas as pd
 from pathlib import Path
 
-YEAR_START = 2000
+YEAR_START = 2015
 YEAR_END = 2025
 
 MONTH_MAPPING = {

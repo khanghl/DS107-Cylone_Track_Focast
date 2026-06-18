@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclone Track Forecast - Premium</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Wind Background -->
+    <canvas id="windCanvas"></canvas>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="logo">
+                <div class="icon-pulse"></div>
+                <h1>Cyclone Forecast</h1>
+            </div>
+            
+            <div class="control-group">
+                <label for="stormSelect">Chọn Bão (Storm):</label>
+                <select id="stormSelect">
+                    <option value="">Đang tải dữ liệu...</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="timeSelect">Thời điểm (Timestep):</label>
+                <select id="timeSelect" disabled>
+                    <option value="">Vui lòng chọn bão trước</option>
+                </select>
+            </div>
+            
+            <button id="predictBtn" class="btn-primary" disabled>
+                <span>Dự Báo Quỹ Đạo & Cường Độ</span>
+            </button>
+
+            <div class="info-panel">
+                <h3>Thông số mô hình</h3>
+                <ul id="stormInfo">
+                    <li>Sai số 24h: <span id="infoDPE">--</span> km</li>
+                    <li>Vĩ độ: <span id="infoLat">--</span></li>
+                    <li>Kinh độ: <span id="infoLon">--</span></li>
+                </ul>
+            </div>
+            
+            <div class="legend">
+                <h3>Chú giải (Legend)</h3>
+                <div class="legend-item"><span class="color-box real-track"></span> Quá khứ (Past Track)</div>
+                <div class="legend-item"><span class="color-box true-track"></span> Thực tế tương lai (True)</div>
+                <div class="legend-item"><span class="color-box dpe-circle"></span> Vòng tròn lỗi (DPE)</div>
+                <div class="legend-item"><span class="color-box pred-6h"></span> Dự báo +6h</div>
+                <div class="legend-item"><span class="color-box pred-12h"></span> Dự báo +12h</div>
+                <div class="legend-item"><span class="color-box pred-24h"></span> Dự báo +24h</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            
+            <!-- Map Container -->
+            <div class="map-container glass-panel">
+                <div id="map"></div>
+            </div>
+
+            <!-- Chart Container -->
+            <div class="chart-container glass-panel">
+                <h2>Cường Độ Gió Dự Báo (Wind Intensity)</h2>
+                <div class="chart-wrapper">
+                    <canvas id="windChart"></canvas>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>

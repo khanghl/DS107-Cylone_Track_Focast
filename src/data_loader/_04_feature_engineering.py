@@ -7,6 +7,7 @@ REF_LAT = 16.05
 BASE_PATH = Path(__file__).parent.parent.parent
 
 DYNAMIC_DIR = BASE_PATH / 'data' / 'processed' / 'dynamic_feature.csv'
+
 OUTPUT = BASE_PATH / 'data' / 'processed' / 'final_data.csv'
 
 def load_clean_data() -> pd.DataFrame:
@@ -19,10 +20,10 @@ def load_clean_data() -> pd.DataFrame:
 def add_lag_features(df: pd.DataFrame) -> pd.DataFrame:
     for t in [6, 12, 18, 24]:
         step = t // 6
-        df[f'LAT_T-{t}']       = df.groupby('SID')['LAT'].shift(step)
-        df[f'LON_T-{t}']       = df.groupby('SID')['LON'].shift(step)
-        df[f'WIND_T-{t}']      = df.groupby('SID')['WMO_WIND'].shift(step)
-        df[f'PRES_T-{t}']      = df.groupby('SID')['WMO_PRES'].shift(step)
+        df[f'LAT_T-{t}'] = df.groupby('SID')['LAT'].shift(step)
+        df[f'LON_T-{t}'] = df.groupby('SID')['LON'].shift(step)
+        df[f'WIND_T-{t}'] = df.groupby('SID')['WMO_WIND'].shift(step)
+        df[f'PRES_T-{t}'] = df.groupby('SID')['WMO_PRES'].shift(step)
 
     df['DIST2LAND_T-6'] = df.groupby('SID')['DIST2LAND'].shift(1)
     return df

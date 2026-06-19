@@ -1,4 +1,4 @@
-# HỆ THỐNG DỰ BÁO QUỸ ĐẠO VÀ CƯỜNG ĐỘ BÃO NHIỆT ĐỚI KHU VỰC TÂY THÁI BÌNH DƯƠNG DỰA TRÊN HỢP NHẤT ĐẶC TRƯNG ĐA PHƯƠNG THỨC
+# MultiFusionTC: HỆ THỐNG DỰ BÁO QUỸ ĐẠO VÀ CƯỜNG ĐỘ BÃO NHIỆT ĐỚI KHU VỰC TÂY THÁI BÌNH DƯƠNG DỰA TRÊN HỢP NHẤT ĐẶC TRƯNG ĐA PHƯƠNG THỨC
 
 > Bài toán để dự báo **đồng thời** quỹ đạo và cường độ của bão nhiệt đới tại khu vực Tây Bắc Thái Bình Dương (WNP). Khác với các phương pháp truyền thống, hệ thống này tiên phong áp dụng kiến trúc **Multimodal (Đa phương thức)** kết hợp với **Stacking Ensemble**, sau đó hiển thị trực quan thông qua một ứng dụng Web tương tác (Interactive Web App).
 

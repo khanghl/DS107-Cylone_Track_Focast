@@ -50,7 +50,7 @@ for sid, storm_name in storms_to_plot.items():
 
     # Lọc các model tốt nhất để vẽ cho đỡ rối mắt
     plot_models = [m for m in storm_df["Strategy"].unique() 
-                   if "CLIPER" in m or "LIGHTGBM" in m or "Ensemble" in m or "Stacking" in m]
+                   if "CLIPER" in m or "LIGHTGBM" in m or "Stacking" in m]
     colors = plt.cm.tab10(np.linspace(0, 1, len(plot_models)))
 
     # ========================================================

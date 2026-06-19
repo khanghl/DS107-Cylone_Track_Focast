@@ -48,7 +48,7 @@ def train_multimodal():
     alpha = 1.0 # Trọng số cho MSE Quỹ đạo
     beta = 0.5  # Trọng số cho MSE Cường độ
     
-    epochs = 50
+    epochs = 65
     
     print("Start End-to-End Multitask Training...")
     best_loss = float('inf')
